@@ -1,7 +1,8 @@
-# Classification_Mlflow-DVC
+# Classification_Caner_Mlflow-DVC
 
-## for creating data ingestion folder and unzip the data there
-stepp1.Update config.yaml file : 
+## 1.Creation of the Pipeline 
+
+step1.Update config.yaml file : 
 
 step2. update params.yaml
 
@@ -10,17 +11,18 @@ step3. Update entity.yaml
 step4. update the config manager from src 
 
 
-## using MLflow remotely with Dragshub server 
+## 2.Using MLflow remotely with Dragshub server 
+
+Review Demonstration [https://github.com/yusufM03/MLflow_Tracking]
 
 
-
-## DVC cmd
-dvc init
+## 3. DVC cmd for tracking the pipeline automatically
+`dvc init
 dvc repro
-dvc dag
+dvc dag `
 
 ![Our pipeline](image.png)
 
 
 
-"# Classification_Cancer_Mlflow-DVC" 
+
