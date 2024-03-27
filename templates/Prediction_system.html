@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Projet site e-commerce B3EC</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="../static/css/stylee.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" />
+    
+  </head>
+  <body>
+    <!-- Barre de navigation -->
+    <nav>
+      <div class="nav-item" id ="ontop">
+          
+        
+      <div class="nav-item" id="onglets">
+        <p class="link"><a href="/">Accueil</a></p>
+            
+        <p class="link"><a href="cadeaux_personalisés.html">Prediction</a></p>
+       
+        
+        
+        <p class="link"><a href="chocolatetgourmandises.html">Historic</a></p>
+       
+      </div>
+      
+    </nav>
+    <!-- Fin de la barre de navigation -->
+
+    <!-- prediction and upload file buttoms-->
+
+    <div class="upload-container">
+      <input type="file" id="upload" accept="image/*" name="image" oninput="handleFileUpload(event)">
+      <img id='input'  src=""> 
+      <label for="upload" class="upload-button">Upload Image</label>
+      <div class="image-container">
+        <img id="input" src="">
+      </div>
+      <output id="predicted-images"></output>
+    </div>
+
+
+
+    <script>  
+    function handleFileUpload(event) {
+  upload();
+}
+    function upload() {
+  const fileInput = document.getElementById('upload');
+  const file = fileInput.files[0];
+  const formData = new FormData();
+  formData.append('image', file);
+
+  fetch('/upload', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => response.json())
+  .then(data => {
+    predictedImagesContainer = document.getElementById('predicted-images');
+    predictedImagesContainer.innerHTML = data.pred;
+    document.getElementById('input').src = data.imageUrl;
+  })
+  .catch(error => {
+    console.error('Error uploading image:', error);
+  });
+}
+
+  </script>
+  </body>
+</html>
+    
+
+
+
+
+
+    
+  
+    
+   
+      

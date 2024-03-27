@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+body{
+  margin:0px;
+  padding: 0px;
+  font-family: 'Open Sans light', sans-serif;
+}
+/* Barre de navigation */ 
+/* Barre de navigation */
+nav {
+  display: flex;
+  justify-content: center; /* Center the items horizontally */
+  align-items: center; /* Center the items vertically */
+  flex-wrap: wrap;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  position: sticky;
+  top: 0;
+  font-weight: bold;
+  transition: color 0.3s;
+  margin-inline-end: 10px;
+  z-index: 1000;
+  padding-top: 0px;
+  background-color: rgb(50, 50, 69);
+}
+
+.link a { 
+  text-decoration:none;}
+
+/* Styles spécifiques pour .onglets */
+#onglets {
+     /* Couleur d'arrière-plan */
+    padding: 10px; /* Ajoutez un peu d'espace autour du contenu */
+    display:flex;
+    justify-content: space-between;
+    justify-items: center;
+}
+
+.link {
+    color: white; /* Couleur du texte des liens */
+    cursor: pointer;
+    margin: 0 100px;
+    padding-top: 30px;
+      
+}
+
+/* Ajoutez d'autres styles selon vos besoins */
+nav { width: 100%;
+
+}
+.nav-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+
+
+.nav-item p {
+    order: 3; /* Met les icônes (far fa-heart et fas fa-shopping-cart) à droite */
+}
+
+nav #onglets {
+  display: flex;
+  flex-wrap: wrap;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  
+}
+nav #ontop p{
+  font-size: 100 px;
+  margin-right: 30px;
+  cursor:pointer;
+  color: #888585; /* Nouvelle couleur au survol */
+  font-size: 20px; /* Nouvelle taille de police au survol (ajustez la taille à votre convenance) */
+  transition: color 0.3s, font-size 0.3s;
+}
+nav #ontop p:hover {
+  color: #ff0000; /* Nouvelle couleur au survol */
+  font-size: 24px; /* Nouvelle taille de police au survol (ajustez la taille à votre convenance) */
+}
+ 
+#onglets p.link a {
+  text-decoration: none; /* Remove underline decoration */
+  color: #c5b5dd; /* Set the color for non-hover state */
+  font-size: 20px; /* Set the font size */}
+
+
+
+
+nav #onglets p{
+  font-size: 100 px;
+  margin-right: 30px;
+  cursor:pointer;
+  color: #d0c9da; /* Nouvelle couleur au survol */
+  font-size: 20px; /* Nouvelle taille de police au survol (ajustez la taille à votre convenance) */
+  transition: color 0.3s, font-size 0.3s;
+}
+nav #onglets p:hover {
+  color: #ff0000; /* Nouvelle couleur au survol */
+  font-size: 24px; /* Nouvelle taille de police au survol (ajustez la taille à votre convenance) */
+}
+
+nav .onglets input{
+  margin:rgb(199, 191, 191)px;
+  padding: 15px;
+  border-radius: 20px;
+  border:none;
+  background-color: #F2F2F2;
+  outline:none;
+}
+.nav-item {
+  position: relative;
+   
+}
+
+
+#onglets {
+  display: flex;
+  justify-content: center;
+
+}
+
+
+.nav-item .link:hover {
+  display: block; /* Affiche le sous-menu lorsque vous survolez l'élément parent */
+  
+}
+
+  /* Styles pour le texte "Sold Out" en mouvement */
+  .moving-text {
+    position: absolute;
+    top: 30%;
+    
+    font-size: 100px;
+    font-family: "Arial", sans-serif;
+    font-size: 50px; /* Nouvelle taille de police au survol (ajustez la taille à votre convenance) */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+    color: bisque;
+    animation: moveText 10s linear infinite;
+    z-index: 2; /* Pour superposer le texte sur l'image */
+    overflow: hidden; 
+    white-space: nowrap; 
+
+  }
+    
+  @keyframes moveText {
+    0% {
+      margin-left: 3%;
+      opacity: 0.6;}
+    50% {
+      margin-left: 8%;
+      opacity: 1;}
+
+  100% {
+      margin-left: 13%; /* Move fully to the right, off the screen */
+      opacity: 0.4; /* Fully transparent */
+  }
+}
+/* buttoms : upload file */
+/* Add this to your styles.css file or within a style tag in your HTML */
+
+.Realtime-container {
+  position: absolute;
+  top: 65%; /* Adjust the vertical position */
+  left: 50%; /* Adjust the horizontal position */
+  transform: translate(-50%, -50%);
+  text-align: center; /* Optional: Center the content horizontally */
+
+}
+
+.upload-button ,.real-time-button {
+  background-color: rgb(56, 56, 75);
+   /* Blue */
+  color: #c5b5dd ;
+  padding: 15px 30px; /* Adjust padding for height and width */
+  font-size: 20px; /* Adjust font size */
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  display: inline-block;
+  margin-right: 10px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Styling for file input label (to mimic a button) */
+#upload{
+  display: none;
+}
+.upload-button:hover,
+.real-time-button:hover {
+    background-color: #efefef; /* Change color on hover */
+    color: rgb(229, 204, 175); /* Change text color on hover */
+}
+.detail{
+  
+  margin-left: 70px;
+  margin-top: 40px;
+
+}
+.detail p{
+  color: #605555;
+  font-size: large;
+  font-style: oblique;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Fin de la barre de navigation */
+
+/* Header */
+header{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:center;
+}
+header h1{
+  font-size: 30px;
+  max-width: 500px;
+  text-align:center;
+  font-family: 'Open Sans light', sans-serif;
+}
+header button{
+  padding: 15px 20px;
+  font-size: 20px;
+  border:none;
+  border-radius: 5px;
+  outline:none;
+  cursor:pointer;
+}
+/* Fin du header */
+
+/* Section principale */
+
+.main{
+  margin: 20px;
+  margin-top: 80px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.upload-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.upload-button {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.image-container {
+  position: relative;
+  
+}
+
+#input {
+  
+  max-height:200px; 
+  margin-top: 20px
+  
+}
+
+#predicted-images {
+  display: flex;
+  flex-wrap: wrap;
+  
+  
+  max-height:300px;
+}
+
+#predicted-images img {
+  max-width: 250px; /* Augmenter la taille des images prédites */
+  max-height: 250px; /* Augmenter la taille des images prédites */
+  margin-top: 10px; /* Déplacer les images prédites vers le bas */
+}
+
+

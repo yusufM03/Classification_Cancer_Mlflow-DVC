@@ -1,0 +1,31 @@
+cmd: python  src/classification/pipeline/Stage04_Model_Evaluation.py
+deps:
+- path: artifacts/data_ingestion/Data
+  hash: md5
+  md5: 3ddc2c0e262e947578d73eeec3119af6.dir
+  size: 124956798
+  nfiles: 1000
+- path: artifacts/training/model.h5
+  hash: md5
+  md5: 6359c70d576645c7d690340d3627027a
+  size: 59738928
+- path: config/config.yaml
+  hash: md5
+  md5: 83ea31450befcb13c9096bd5901fde81
+  size: 774
+- path: src/classification/pipeline/Stage04_Model_Evaluation.py
+  hash: md5
+  md5: 690764fa1cb0370582eda55e0aeaca2b
+  size: 1070
+params:
+  params.yaml:
+    BATCH_SIZE: 16
+    IMAGE_SIZE:
+    - 224
+    - 224
+    - 3
+outs:
+- path: scores.json
+  hash: md5
+  md5: a7380d9f674da0d326f76b2a42858553
+  size: 71

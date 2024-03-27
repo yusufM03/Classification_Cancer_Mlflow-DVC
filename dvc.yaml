@@ -1,0 +1,54 @@
+stages:
+  data_ingestion:
+    cmd: python src/classification/pipeline/Stage01_Data_Ingestion.py
+    deps:
+      - src/classification/pipeline/Stage01_Data_Ingestion.py
+      - config/config.yaml
+    outs:
+      - artifacts/data_ingestion/Data
+
+
+  prepare_base_model:
+    cmd: python src/classification/pipeline/stage02_Preparation_baseModel.py
+    deps:
+      - src/classification/pipeline/stage02_Preparation_baseModel.py
+      - config/config.yaml
+    params:
+      - IMAGE_SIZE
+      - INCLUDE_TOP
+      - CLASSES
+      - WEIGHTS
+      - LEARNING_RATE
+    outs:
+      - artifacts/prepare_base_model
+
+
+  training:
+    cmd: python src/classification/pipeline/stage03_Training.py
+    deps:
+      - src/classification/pipeline/stage03_Training.py
+      - config/config.yaml
+      - artifacts/data_ingestion/Data
+      - artifacts/prepare_base_model
+    params:
+      - IMAGE_SIZE
+      - EPOCHS
+      - BATCH_SIZE
+      - AUGMENTATION
+    outs:
+      - artifacts/training/model.h5
+
+
+  evaluation:
+    cmd: python  src/classification/pipeline/Stage04_Model_Evaluation.py
+    deps:
+      - src/classification/pipeline/Stage04_Model_Evaluation.py
+      - config/config.yaml
+      - artifacts/data_ingestion/Data
+      - artifacts/training/model.h5
+    params:
+      - IMAGE_SIZE
+      - BATCH_SIZE
+    metrics:
+    - scores.json:
+        cache: false

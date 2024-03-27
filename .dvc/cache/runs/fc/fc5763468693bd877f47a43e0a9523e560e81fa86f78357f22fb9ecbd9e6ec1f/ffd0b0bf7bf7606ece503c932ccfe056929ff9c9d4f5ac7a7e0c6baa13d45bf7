@@ -1,0 +1,16 @@
+cmd: python src/classification/pipeline/Stage01_Data_Ingestion.py
+deps:
+- path: config/config.yaml
+  hash: md5
+  md5: 83ea31450befcb13c9096bd5901fde81
+  size: 774
+- path: src/classification/pipeline/Stage01_Data_Ingestion.py
+  hash: md5
+  md5: 9e1f04e6720e682e45eda64ea58d42cb
+  size: 901
+outs:
+- path: artifacts/data_ingestion/Data
+  hash: md5
+  md5: 3ddc2c0e262e947578d73eeec3119af6.dir
+  size: 124956798
+  nfiles: 1000

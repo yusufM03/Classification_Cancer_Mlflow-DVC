@@ -1,0 +1,26 @@
+cmd: python src/classification/pipeline/stage02_Preparation_baseModel.py
+deps:
+- path: config/config.yaml
+  hash: md5
+  md5: 83ea31450befcb13c9096bd5901fde81
+  size: 774
+- path: src/classification/pipeline/stage02_Preparation_baseModel.py
+  hash: md5
+  md5: 24d826f05c21dc4c7c2a9f8b23a5cd6b
+  size: 995
+params:
+  params.yaml:
+    CLASSES: 4
+    IMAGE_SIZE:
+    - 224
+    - 224
+    - 3
+    INCLUDE_TOP: false
+    LEARNING_RATE: 0.01
+    WEIGHTS: imagenet
+outs:
+- path: artifacts/prepare_base_model
+  hash: md5
+  md5: f73d89d4899fcc125eb69717fad8390c.dir
+  size: 118255264
+  nfiles: 2
